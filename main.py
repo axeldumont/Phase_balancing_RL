@@ -25,7 +25,6 @@ def main():
         print(f'Creating loads_{type_train}_{args.loads}.csv')
         create_loads(args.loads, args.timesteps)
         
-
     env = GymEnv(net, f'./loads/loads_{type_train}_{args.loads}.csv')
 
     model_class = model_classes[args.model]
