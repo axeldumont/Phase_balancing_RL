@@ -30,11 +30,6 @@ def main():
     model_class = model_classes[args.model]
     model = model_class('MlpPolicy', env, verbose=0, tensorboard_log=f'./{args.model}_tensorboard/')
 
-    print(f'Steps: {args.steps}')
-    print(f'Model: {args.model}')
-    print(f'Loads: {args.loads}')
-    print(f'Timesteps: {args.timesteps}')
-
     # Example of training the model
     model.learn(total_timesteps=args.steps, tb_log_name='a2c')
     model.save(f'./models/{args.model}_model_{args.loads}_{args.timesteps}')
