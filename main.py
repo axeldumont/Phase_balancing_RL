@@ -4,6 +4,8 @@ from environment import GymEnv
 from utils import example_net, create_loads
 import tensorrt
 import os.path
+import warnings
+warnings.filterwarnings('ignore', category=DeprecationWarning)
 
 def main():
     parser = argparse.ArgumentParser(description='Process some integers.')
@@ -31,7 +33,7 @@ def main():
     model = model_class('MlpPolicy', env, verbose=0, tensorboard_log=f'./{args.model}_tensorboard/')
 
     # Example of training the model
-    model.learn(total_timesteps=args.steps, tb_log_name='a2c')
+    model.learn(total_timesteps=args.steps, tb_log_name=f'{args.model}_model_{args.loads}_{args.timesteps}')
     model.save(f'./models/{args.model}_model_{args.loads}_{args.timesteps}')
 
 if __name__ == "__main__":
