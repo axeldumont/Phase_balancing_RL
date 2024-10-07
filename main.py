@@ -5,10 +5,10 @@ from utils import example_net, create_loads
 import tensorrt
 import os.path
 import warnings
-warnings.filterwarnings('ignore', category=DeprecationWarning)
+warnings.filterwarnings('ignore', category=FutureWarning)
 
 def main():
-    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser = argparse.ArgumentParser(description='Process the hyperparameters for the environment.')
     parser.add_argument('--steps', type=int, required=True, help='Number of steps to train the model', default=10000)
     parser.add_argument('--model', type=str, required=True, help='Name of the model', default='a2c', choices=['a2c', 'ppo', 'dqn'])
     parser.add_argument('--loads', type=int, required=True, help='Number of loads', default=5)
