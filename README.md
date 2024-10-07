@@ -1,6 +1,6 @@
 # Phase balancing on low voltage distribution networks using Reinforcement Learning
 
-This repo prensents an offline method to model the balancing of a low voltage distribution network using implemented algorithms of reinforcement learning.
+This repo presents an offline method to model the balancing of a low voltage distribution network to reduce phase current imbalance using implemented algorithms of reinforcement learning.
 
 ## Usage
 
